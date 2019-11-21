@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>Testing Watchers</title>
+</head>
+
+<body class="bg-grey-lighter-2 tracking-normal font-basic">
+  <div id="app">
+    <input type="text" v-model="input_name">
+
+    <p>Five seconds ago. The input said {{ old_input_value }}</p>
+    Total value : {{ sum_of_numbers }}
+  </div>
+  <script src="./vue.js"></script>
+  <script src="./watcher.js"></script>
+</body>
+</html> 

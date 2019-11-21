@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<title>Computed Property</title>
+</head>
+
+<body class="bg-grey-lighter-2 tracking-normal font-basic">
+	<div id="app">
+		<div id="app" class="container-fluid">
+			<div class="row">
+				<div class="col-md-3">
+					<label class="control-label">Search Github User</label>
+					<input type="text" class="form-control" @input="isTyping = true" v-model="searchQuery" placeholder="Type your keyword">
+				</div>
+			</div>
+			<div class="row">
+				<div align="center" v-if="isLoading">
+					<span>Searching...</span>
+				</div>
+				<ul class="list-group">
+					<li class="list-group-item" v-for="(item,i) in searchResult">{{ item.login }}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script src="./vue.js"></script>
+	<script src="./computed.js"></script>
+</body>
+</html> 
